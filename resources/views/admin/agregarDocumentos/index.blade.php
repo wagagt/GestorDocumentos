@@ -63,12 +63,26 @@
                                                 </a>
                                             @endif
                                         </td>
+                                        
                                         <td>
                                             @can('agregar_documento_show')
                                                 <a class="btn btn-xs btn-primary" href="{{ route('admin.agregar-documentos.show', $agregarDocumento->id) }}">
                                                     {{ trans('global.view') }}
                                                 </a>
                                             @endcan
+
+                                            {{-- Botón personalizado para editar/ver DOCX --}}
+                                            @if ($agregarDocumento->documento_fisico && in_array($agregarDocumento->documento_fisico->mime_type, ['application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']))
+                                                <a class="btn btn-xs btn-warning" href="{{ route('admin.agregar-documentos.editar-doc', $agregarDocumento->id) }}">
+                                                    Editar DOCX
+                                                </a>
+                                            @else
+                                                @if ($agregarDocumento->documento_fisico)
+                                                    <a class="btn btn-xs btn-info" target="_blank" href="{{ $agregarDocumento->documento_fisico->getUrl() }}">
+                                                        Ver Documento
+                                                    </a>
+                                                @endif
+                                            @endif
 
                                             @can('agregar_documento_edit')
                                                 <a class="btn btn-xs btn-info" href="{{ route('admin.agregar-documentos.edit', $agregarDocumento->id) }}">
@@ -83,7 +97,6 @@
                                                     <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
                                                 </form>
                                             @endcan
-
                                         </td>
 
                                     </tr>

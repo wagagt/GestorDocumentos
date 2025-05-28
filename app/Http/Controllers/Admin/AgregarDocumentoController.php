@@ -9,6 +9,9 @@ use App\Http\Requests\StoreAgregarDocumentoRequest;
 use App\Http\Requests\UpdateAgregarDocumentoRequest;
 use App\Models\AgregarCaso;
 use App\Models\AgregarDocumento;
+use PhpOffice\PhpWord\PhpWord;
+use PhpOffice\PhpWord\Shared\Html;
+use PhpOffice\PhpWord\IOFactory;
 use Gate;
 use Illuminate\Http\Request;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -120,4 +123,58 @@ class AgregarDocumentoController extends Controller
 
         return response()->json(['id' => $media->id, 'url' => $media->getUrl()], Response::HTTP_CREATED);
     }
+
+    //Para editar documentos desde la WEB
+    public function editarDocumento($id)
+    {
+        $documento = AgregarDocumento::findOrFail($id);
+
+        // Validar que el archivo sea Word
+        $mimeTypesPermitidos = [
+            'application/msword',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        ];
+
+        if (!$documento->documento_fisico || !in_array($documento->documento_fisico->mime_type, $mimeTypesPermitidos)) {
+            abort(403, 'Este archivo no se puede editar en línea.');
+        }
+
+        // Obtener contenido del archivo Word y convertirlo a HTML
+        $path = storage_path('app/public/' . $documento->documento_fisico->id . '/' . $documento->documento_fisico->file_name);
+
+        if (!file_exists($path)) {
+            abort(404, 'Archivo no encontrado.');
+        }
+
+        $phpWord = \PhpOffice\PhpWord\IOFactory::load($path);
+        $writer = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'HTML');
+
+        ob_start();
+        $writer->save('php://output');
+        $htmlContent = ob_get_clean();
+
+        return view('admin.agregarDocumentos.editar-docx', compact('documento', 'htmlContent'));
+    }
+
+    public function guardarDocumento(Request $request, AgregarDocumento $documento)
+    {
+        $content = $request->input('content');
+
+        $phpWord = new PhpWord();
+        $section = $phpWord->addSection();
+        Html::addHtml($section, $content, false, false);
+
+        $fileName = 'documento_editado_' . time() . '.docx';
+        $path = storage_path('app/public/' . $fileName);
+
+        $writer = IOFactory::createWriter($phpWord, 'Word2007');
+        $writer->save($path);
+
+        // Reemplazar archivo
+        $documento->clearMediaCollection('documento_fisico');
+        $documento->addMedia($path)->toMediaCollection('documento_fisico');
+
+        return redirect()->route('admin.agregar-documentos.index')->with('success', 'Documento actualizado');
+    }
+
 }

@@ -51,6 +51,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('agregar-documentos/ckmedia', 'AgregarDocumentoController@storeCKEditorImages')->name('agregar-documentos.storeCKEditorImages');
     Route::resource('agregar-documentos', 'AgregarDocumentoController');
 
+    // Edición de documentos Word con TinyMCE
+    Route::get('agregar-documentos/{documento}/editar-doc', 'AgregarDocumentoController@editarDocumento')->name('agregar-documentos.editar-doc');
+    Route::post('agregar-documentos/{documento}/guardar-doc', 'AgregarDocumentoController@guardarDocumento')->name('agregar-documentos.guardar-doc');
+    
     // Adjuntos
     Route::delete('adjuntos/destroy', 'AdjuntosController@massDestroy')->name('adjuntos.massDestroy');
     Route::resource('adjuntos', 'AdjuntosController');
