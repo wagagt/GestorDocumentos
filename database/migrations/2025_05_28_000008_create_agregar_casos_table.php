@@ -1,0 +1,20 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateAgregarCasosTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('agregar_casos', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nombre');
+            $table->longText('descripcion');
+            $table->date('fecha_creacion');
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
+}
