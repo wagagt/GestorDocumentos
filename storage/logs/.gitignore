@@ -1,2 +1,39 @@
-*
-!.gitignore
+# Laravel
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+.env
+.env.backup
+Homestead.yaml
+Homestead.json
+npm-debug.log
+yarn-error.log
+
+# Laravel 8+ Mix
+/public/hot
+/public/mix-manifest.json
+/public/css/*.css
+/public/js/*.js
+
+# IDEs y editores
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+/storage/logs/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+
+# PHPUnit
+.phpunit.result.cache
+coverage.xml
+coverage/
