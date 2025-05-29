@@ -3,7 +3,7 @@
 <div class="login-box">
     <div class="login-logo">
         <a href="{{ route('admin.home') }}">
-            {{ trans('panel.site_title') }}
+             Gestor Documentos
         </a>
     </div>
     <div class="login-box-body">
