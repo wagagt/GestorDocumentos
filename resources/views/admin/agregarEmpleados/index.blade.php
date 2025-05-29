@@ -5,7 +5,7 @@
         <div style="margin-bottom: 10px;" class="row">
             <div class="col-lg-12">
                 <a class="btn btn-success" href="{{ route('admin.agregar-empleados.create') }}">
-                    {{ trans('global.add') }} {{ trans('cruds.agregarEmpleado.title_singular') }}
+                    Agregar Empleado
                 </a>
             </div>
         </div>
@@ -14,7 +14,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('cruds.agregarEmpleado.title_singular') }} {{ trans('global.list') }}
+                    Lista de Empleados
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">

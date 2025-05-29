@@ -6,7 +6,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('global.create') }} {{ trans('cruds.paso.title_singular') }}
+                   Crear Paso
                 </div>
                 <div class="panel-body">
                     <form method="POST" action="{{ route("admin.pasos.store") }}" enctype="multipart/form-data">
@@ -90,7 +90,7 @@
                         </div>
                         <div class="form-group">
                             <button class="btn btn-danger" type="submit">
-                                {{ trans('global.save') }}
+                             Crear Paso
                             </button>
                         </div>
                     </form>

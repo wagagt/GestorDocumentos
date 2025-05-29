@@ -6,25 +6,18 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('global.show') }} {{ trans('cruds.paso.title') }}
+                  Mostrar información del Paso
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
                         <div class="form-group">
                             <a class="btn btn-default" href="{{ route('admin.pasos.index') }}">
-                                {{ trans('global.back_to_list') }}
+                                Regresar a la lista de Pasos
                             </a>
                         </div>
                         <table class="table table-bordered table-striped">
                             <tbody>
-                                <tr>
-                                    <th>
-                                        {{ trans('cruds.paso.fields.id') }}
-                                    </th>
-                                    <td>
-                                        {{ $paso->id }}
-                                    </td>
-                                </tr>
+                               
                                 <tr>
                                     <th>
                                         {{ trans('cruds.paso.fields.flujo') }}
@@ -93,7 +86,7 @@
                         </table>
                         <div class="form-group">
                             <a class="btn btn-default" href="{{ route('admin.pasos.index') }}">
-                                {{ trans('global.back_to_list') }}
+                               Regresar a la lista de Pasos
                             </a>
                         </div>
                     </div>

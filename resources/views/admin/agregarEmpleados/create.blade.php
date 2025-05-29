@@ -6,7 +6,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('global.create') }} {{ trans('cruds.agregarEmpleado.title_singular') }}
+                    Agregar nuevo Empleado
                 </div>
                 <div class="panel-body">
                     <form method="POST" action="{{ route("admin.agregar-empleados.store") }}" enctype="multipart/form-data">
@@ -28,7 +28,7 @@
                             <span class="help-block">{{ trans('cruds.agregarEmpleado.fields.puesto_helper') }}</span>
                         </div>
                         <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                            <label for="email">{{ trans('cruds.agregarEmpleado.fields.email') }}</label>
+                            <label for="email">Correo electronico</label>
                             <input class="form-control" type="email" name="email" id="email" value="{{ old('email') }}">
                             @if($errors->has('email'))
                                 <span class="help-block" role="alert">{{ $errors->first('email') }}</span>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <button class="btn btn-danger" type="submit">
-                                {{ trans('global.save') }}
+                               Crear empleado
                             </button>
                         </div>
                     </form>

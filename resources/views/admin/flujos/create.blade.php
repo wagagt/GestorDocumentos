@@ -6,7 +6,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('global.create') }} {{ trans('cruds.flujo.title_singular') }}
+                  Agregar Flujo
                 </div>
                 <div class="panel-body">
                     <form method="POST" action="{{ route("admin.flujos.store") }}" enctype="multipart/form-data">
@@ -20,7 +20,7 @@
                             <span class="help-block">{{ trans('cruds.flujo.fields.nombre_helper') }}</span>
                         </div>
                         <div class="form-group {{ $errors->has('descripcion') ? 'has-error' : '' }}">
-                            <label class="required" for="descripcion">{{ trans('cruds.flujo.fields.descripcion') }}</label>
+                            <label class="required" for="descripcion">Descripción</label>
                             <textarea class="form-control" name="descripcion" id="descripcion" required>{{ old('descripcion') }}</textarea>
                             @if($errors->has('descripcion'))
                                 <span class="help-block" role="alert">{{ $errors->first('descripcion') }}</span>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="form-group">
                             <button class="btn btn-danger" type="submit">
-                                {{ trans('global.save') }}
+                               Crear Flujo
                             </button>
                         </div>
                     </form>

@@ -6,25 +6,17 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('global.show') }} {{ trans('cruds.adjunto.title') }}
+                   Mostrar adjunto
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
                         <div class="form-group">
                             <a class="btn btn-default" href="{{ route('admin.adjuntos.index') }}">
-                                {{ trans('global.back_to_list') }}
+                             Regresar a la lista de adjuntos
                             </a>
                         </div>
                         <table class="table table-bordered table-striped">
-                            <tbody>
-                                <tr>
-                                    <th>
-                                        {{ trans('cruds.adjunto.fields.id') }}
-                                    </th>
-                                    <td>
-                                        {{ $adjunto->id }}
-                                    </td>
-                                </tr>
+                            <tbody>                               
                                 <tr>
                                     <th>
                                         {{ trans('cruds.adjunto.fields.caso') }}
@@ -53,7 +45,7 @@
                         </table>
                         <div class="form-group">
                             <a class="btn btn-default" href="{{ route('admin.adjuntos.index') }}">
-                                {{ trans('global.back_to_list') }}
+                               Regresar a la lista de adjuntos
                             </a>
                         </div>
                     </div>

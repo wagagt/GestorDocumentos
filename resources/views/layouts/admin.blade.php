@@ -28,8 +28,8 @@
     <div class="wrapper" style="height: auto; min-height: 100%;">
         <header class="main-header">
             <a href="#" class="logo">
-                <span class="logo-mini"><b>{{ trans('panel.site_title') }}</b></span>
-                <span class="logo-lg">{{ trans('panel.site_title') }}</span>
+                Gestor Documentos
+                <span class="logo-mini"><b>GD</b></span>
             </a>
 
             <nav class="navbar navbar-static-top">

@@ -6,7 +6,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('global.create') }} {{ trans('cruds.adjunto.title_singular') }}
+                    Crear Adjunto
                 </div>
                 <div class="panel-body">
                     <form method="POST" action="{{ route("admin.adjuntos.store") }}" enctype="multipart/form-data">
@@ -46,7 +46,7 @@
                         </div>
                         <div class="form-group">
                             <button class="btn btn-danger" type="submit">
-                                {{ trans('global.save') }}
+                               Guardar
                             </button>
                         </div>
                     </form>

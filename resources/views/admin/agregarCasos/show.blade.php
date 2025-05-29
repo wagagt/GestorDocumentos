@@ -6,13 +6,13 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('global.show') }} {{ trans('cruds.agregarCaso.title') }}
+                    Mostrar Caso
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
                         <div class="form-group">
                             <a class="btn btn-default" href="{{ route('admin.agregar-casos.index') }}">
-                                {{ trans('global.back_to_list') }}
+                               Regresar a la lista de Casos
                             </a>
                         </div>
                         <table class="table table-bordered table-striped">
@@ -69,7 +69,7 @@
                         </table>
                         <div class="form-group">
                             <a class="btn btn-default" href="{{ route('admin.agregar-casos.index') }}">
-                                {{ trans('global.back_to_list') }}
+                                  Regresar a la lista de Casos
                             </a>
                         </div>
                     </div>
