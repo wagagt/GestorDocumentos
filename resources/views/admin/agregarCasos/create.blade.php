@@ -6,7 +6,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('global.create') }} {{ trans('cruds.agregarCaso.title_singular') }}
+                  Agregar Caso
                 </div>
                 <div class="panel-body">
                     <form method="POST" action="{{ route("admin.agregar-casos.store") }}" enctype="multipart/form-data">
@@ -61,7 +61,7 @@
                         </div>
                         <div class="form-group">
                             <button class="btn btn-danger" type="submit">
-                                {{ trans('global.save') }}
+                               Guardar
                             </button>
                         </div>
                     </form>

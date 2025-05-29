@@ -6,7 +6,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('global.create') }} {{ trans('cruds.comentario.title_singular') }}
+                  Crear Comentario
                 </div>
                 <div class="panel-body">
                     <form method="POST" action="{{ route("admin.comentarios.store") }}" enctype="multipart/form-data">
@@ -61,7 +61,7 @@
                         </div>
                         <div class="form-group">
                             <button class="btn btn-danger" type="submit">
-                                {{ trans('global.save') }}
+                            Guardar
                             </button>
                         </div>
                     </form>

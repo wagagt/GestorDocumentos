@@ -6,13 +6,13 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('global.show') }} {{ trans('cruds.agregarEmpleado.title') }}
+                 Mostrar informacion Empleado
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
                         <div class="form-group">
                             <a class="btn btn-default" href="{{ route('admin.agregar-empleados.index') }}">
-                                {{ trans('global.back_to_list') }}
+                               Regresar a la lista de empleados
                             </a>
                         </div>
                         <table class="table table-bordered table-striped">
@@ -43,7 +43,7 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        {{ trans('cruds.agregarEmpleado.fields.email') }}
+                                        Correo Electronico
                                     </th>
                                     <td>
                                         {{ $agregarEmpleado->email }}
@@ -53,7 +53,7 @@
                         </table>
                         <div class="form-group">
                             <a class="btn btn-default" href="{{ route('admin.agregar-empleados.index') }}">
-                                {{ trans('global.back_to_list') }}
+                             Regresar a la lista de empleados
                             </a>
                         </div>
                     </div>

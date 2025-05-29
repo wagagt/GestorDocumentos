@@ -6,7 +6,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('global.edit') }} {{ trans('cruds.comentario.title_singular') }}
+                   Editar Comentario
                 </div>
                 <div class="panel-body">
                     <form method="POST" action="{{ route("admin.comentarios.update", [$comentario->id]) }}" enctype="multipart/form-data">
@@ -62,7 +62,7 @@
                         </div>
                         <div class="form-group">
                             <button class="btn btn-danger" type="submit">
-                                {{ trans('global.save') }}
+                                Guardar cambios
                             </button>
                         </div>
                     </form>

@@ -5,7 +5,7 @@
         <div style="margin-bottom: 10px;" class="row">
             <div class="col-lg-12">
                 <a class="btn btn-success" href="{{ route('admin.pasos.create') }}">
-                    {{ trans('global.add') }} {{ trans('cruds.paso.title_singular') }}
+                Agregar paso
                 </a>
             </div>
         </div>
@@ -14,7 +14,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('cruds.paso.title_singular') }} {{ trans('global.list') }}
+                   Lista de Pasos
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">

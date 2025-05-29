@@ -5,7 +5,7 @@
         <div style="margin-bottom: 10px;" class="row">
             <div class="col-lg-12">
                 <a class="btn btn-success" href="{{ route('admin.flujos.create') }}">
-                    {{ trans('global.add') }} {{ trans('cruds.flujo.title_singular') }}
+                    Agregar Flujo
                 </a>
             </div>
         </div>
@@ -14,7 +14,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('cruds.flujo.title_singular') }} {{ trans('global.list') }}
+                    Lista de Flujos
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">

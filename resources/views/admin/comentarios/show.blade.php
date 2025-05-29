@@ -6,25 +6,17 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('global.show') }} {{ trans('cruds.comentario.title') }}
+                   Mostrar comentario
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
                         <div class="form-group">
                             <a class="btn btn-default" href="{{ route('admin.comentarios.index') }}">
-                                {{ trans('global.back_to_list') }}
+                              Regresar a la lista de comentarios
                             </a>
                         </div>
                         <table class="table table-bordered table-striped">
-                            <tbody>
-                                <tr>
-                                    <th>
-                                        {{ trans('cruds.comentario.fields.id') }}
-                                    </th>
-                                    <td>
-                                        {{ $comentario->id }}
-                                    </td>
-                                </tr>
+                            <tbody>                              
                                 <tr>
                                     <th>
                                         {{ trans('cruds.comentario.fields.caso') }}
@@ -69,7 +61,7 @@
                         </table>
                         <div class="form-group">
                             <a class="btn btn-default" href="{{ route('admin.comentarios.index') }}">
-                                {{ trans('global.back_to_list') }}
+                              Regresar a la lista de comentarios
                             </a>
                         </div>
                     </div>

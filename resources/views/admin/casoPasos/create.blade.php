@@ -6,7 +6,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('global.create') }} {{ trans('cruds.casoPaso.title_singular') }}
+                  Crear Caso Paso
                 </div>
                 <div class="panel-body">
                     <form method="POST" action="{{ route("admin.caso-pasos.store") }}" enctype="multipart/form-data">
@@ -36,7 +36,7 @@
                             <span class="help-block">{{ trans('cruds.casoPaso.fields.paso_helper') }}</span>
                         </div>
                         <div class="form-group {{ $errors->has('status_actual') ? 'has-error' : '' }}">
-                            <label class="required">{{ trans('cruds.casoPaso.fields.status_actual') }}</label>
+                            <label class="required">Estado</label>
                             <select class="form-control" name="status_actual" id="status_actual" required>
                                 <option value disabled {{ old('status_actual', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
                                 @foreach(App\Models\CasoPaso::STATUS_ACTUAL_SELECT as $key => $label)
@@ -66,7 +66,7 @@
                         </div>
                         <div class="form-group">
                             <button class="btn btn-danger" type="submit">
-                                {{ trans('global.save') }}
+                               Guardar
                             </button>
                         </div>
                     </form>
