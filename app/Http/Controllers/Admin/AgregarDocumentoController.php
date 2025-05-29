@@ -83,14 +83,43 @@ class AgregarDocumentoController extends Controller
         return redirect()->route('admin.agregar-documentos.index');
     }
 
+    // public function show(AgregarDocumento $agregarDocumento)
+    // {
+    //     abort_if(Gate::denies('agregar_documento_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+    //     $agregarDocumento->load('caso');
+
+    //     return view('admin.agregarDocumentos.show', compact('agregarDocumento'));
+    // }
+
     public function show(AgregarDocumento $agregarDocumento)
     {
         abort_if(Gate::denies('agregar_documento_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $agregarDocumento->load('caso');
 
-        return view('admin.agregarDocumentos.show', compact('agregarDocumento'));
+        $htmlContent = null;
+        $mimeTypesPermitidos = [
+            'application/msword',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        ];
+
+        if ($agregarDocumento->documento_fisico && in_array($agregarDocumento->documento_fisico->mime_type, $mimeTypesPermitidos)) {
+            $path = storage_path('app/public/' . $agregarDocumento->documento_fisico->id . '/' . $agregarDocumento->documento_fisico->file_name);
+            
+            if (file_exists($path)) {
+                $phpWord = \PhpOffice\PhpWord\IOFactory::load($path);
+                $writer = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'HTML');
+
+                ob_start();
+                $writer->save('php://output');
+                $htmlContent = ob_get_clean();
+            }
+        }
+
+        return view('admin.agregarDocumentos.show', compact('agregarDocumento', 'htmlContent'));
     }
+
 
     public function destroy(AgregarDocumento $agregarDocumento)
     {
