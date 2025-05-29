@@ -6,7 +6,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                  Editar empleado
+                  Editar Encargado
                 </div>
                 <div class="panel-body">
                     <form method="POST" action="{{ route("admin.agregar-empleados.update", [$agregarEmpleado->id]) }}" enctype="multipart/form-data">

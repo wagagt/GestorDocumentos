@@ -57,11 +57,11 @@
                                             {{ $agregarDocumento->nombre ?? '' }}
                                         </td>
                                         <td>
-                                            @if($agregarDocumento->documento_fisico)
-                                                <a href="{{ $agregarDocumento->documento_fisico->getUrl() }}" target="_blank">
-                                                    {{ trans('global.view_file') }}
-                                                </a>
-                                            @endif
+                                      @if($agregarDocumento->documento_fisico)
+                                            <a href="{{ $agregarDocumento->documento_fisico->getUrl() }}" target="_blank">
+                                                📥 Descargar 
+                                            </a>
+                                        @endif
                                         </td>
                                         
                                         <td>
@@ -73,7 +73,7 @@
 
                                             {{-- Botón personalizado para editar/ver DOCX --}}
                                             @if ($agregarDocumento->documento_fisico && in_array($agregarDocumento->documento_fisico->mime_type, ['application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']))
-                                                <a class="btn btn-xs btn-warning" href="{{ route('admin.agregar-documentos.editar-doc', $agregarDocumento->id) }}">
+                                                <a class="btn btn-xs btn-warning" href="{{ route('admin.agregar-documentos.show', $agregarDocumento->id) }}">
                                                     Editar DOCX
                                                 </a>
                                             @else

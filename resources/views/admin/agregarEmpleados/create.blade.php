@@ -6,7 +6,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Agregar nuevo Empleado
+                    Agregar nuevo Encargado
                 </div>
                 <div class="panel-body">
                     <form method="POST" action="{{ route("admin.agregar-empleados.store") }}" enctype="multipart/form-data">
@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <button class="btn btn-danger" type="submit">
-                               Crear empleado
+                               Crear Encargado
                             </button>
                         </div>
                     </form>

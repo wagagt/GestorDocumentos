@@ -6,13 +6,13 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Mostrar informacion Empleado
+                 Mostrar informacion Encargado
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
                         <div class="form-group">
                             <a class="btn btn-default" href="{{ route('admin.agregar-empleados.index') }}">
-                               Regresar a la lista de empleados
+                               Regresar a la lista de encargados
                             </a>
                         </div>
                         <table class="table table-bordered table-striped">
@@ -53,7 +53,7 @@
                         </table>
                         <div class="form-group">
                             <a class="btn btn-default" href="{{ route('admin.agregar-empleados.index') }}">
-                             Regresar a la lista de empleados
+                             Regresar a la lista de encargados
                             </a>
                         </div>
                     </div>

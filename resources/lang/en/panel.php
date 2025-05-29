@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'site_title' => 'MANES_GestorDocumentos',
+    'site_title' => 'Gestor de Documentos',
 
 ];
